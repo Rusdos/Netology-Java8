@@ -11,7 +11,8 @@ class ConditionerTest {
         Conditioner conditioner = new Conditioner();
         int expected = 39;
         conditioner.setMaxTemperature(40);
-        conditioner.increaseCurrentTemperature(38);
+        conditioner.setCurrentTemperature(38);
+        conditioner.increaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
 
     }
@@ -20,7 +21,8 @@ class ConditionerTest {
         Conditioner conditioner = new Conditioner();
         int expected = 40;
         conditioner.setMaxTemperature(40);
-        conditioner.increaseCurrentTemperature(40);
+        conditioner.setCurrentTemperature(40);
+        conditioner.increaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
 
     }
@@ -30,7 +32,8 @@ class ConditionerTest {
         Conditioner conditioner = new Conditioner();
         int expected = -1;
         conditioner.setMinTemperature(-3);
-        conditioner.decreaseCurrentTemperature(0);
+        conditioner.setCurrentTemperature(0);
+        conditioner.decreaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
@@ -39,7 +42,8 @@ class ConditionerTest {
         Conditioner conditioner = new Conditioner();
         int expected = 0;
         conditioner.setMinTemperature(0);
-        conditioner.decreaseCurrentTemperature(0);
+        conditioner.setCurrentTemperature(0);
+        conditioner.decreaseCurrentTemperature();
         assertEquals(expected, conditioner.getCurrentTemperature());
     }
 
