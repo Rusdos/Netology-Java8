@@ -37,7 +37,6 @@ public class Radio {
 
     public void increaseVolume() {
         if (this.getVolume() == 10) {
-            this.setVolume(10);
             return;
         }
         this.volume++;
