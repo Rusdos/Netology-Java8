@@ -13,10 +13,6 @@ public class Radio {
     private int volume;
     private int count;
 
-    public int getStation() {
-        return station;
-    }
-
     public void setStation(int station) {
 
         if (station < 0) {
@@ -28,19 +24,7 @@ public class Radio {
         }
         this.station = station;
     }
-
-    public int getCount() {
-        return count;
-    }
-
-    public void setCount(int count) {
-        this.count = count;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
+    
     public void setVolume(int volume) {
         if (volume > 100) {
             this.volume = 100;
