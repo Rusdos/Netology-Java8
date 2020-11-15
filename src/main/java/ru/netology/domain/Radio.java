@@ -3,6 +3,11 @@ package ru.netology.domain;
 public class Radio {
     private int station;
     private int volume;
+    private int count;
+
+    public Radio(int count) {
+        this.count = count;
+    }
 
     public int getStation() {
         return station;
@@ -13,11 +18,19 @@ public class Radio {
         if (station < 0) {
             return;
         }
-        if (station > 9) {
-            this.station = 9;
+        if (station > this.count) {
+            this.station = this.count;
             return;
         }
         this.station = station;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public int getVolume() {
@@ -25,8 +38,8 @@ public class Radio {
     }
 
     public void setVolume(int volume) {
-        if (volume > 10) {
-            this.volume = 10;
+        if (volume > 100) {
+            this.volume = 100;
             return;
         }
         if (volume < 0) {
@@ -36,7 +49,7 @@ public class Radio {
     }
 
     public void increaseVolume() {
-        if (this.getVolume() == 10) {
+        if (this.getVolume() == 100) {
             return;
         }
         this.volume++;
@@ -50,7 +63,7 @@ public class Radio {
     }
 
     public void nextStation() {
-        if (this.getStation() == 9) {
+        if (this.getStation() == this.count) {
             this.setStation(0);
             return;
         }
@@ -59,9 +72,11 @@ public class Radio {
 
     public void previousStation() {
         if (this.getStation() == 0) {
-            this.setStation(9);
+            this.setStation(this.count);
             return;
         }
         this.station--;
     }
+
+
 }
